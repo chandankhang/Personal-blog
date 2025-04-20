@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Post</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Edit Post</h1>
+    <form action="/update/<%= index %>" method="post">
+      <label for="title">Post Title: </label>
+      <input type="text" id="title" name="title" value="<%= post.title %>" required>
+
+      <label for="content">Post Content:</label>
+      <textarea name="content" id="content" rows="6" required>
+        <%= post.content %>
+      </textarea>
+
+      <button type="submit">Update Post</button>
+    </form>
+    <a href="/"><button>Back to Home</button></a>
+  </div>
+  
+</body>
+</html>
